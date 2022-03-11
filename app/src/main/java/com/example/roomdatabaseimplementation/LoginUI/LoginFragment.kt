@@ -60,9 +60,12 @@ class LoginFragment : Fragment() {
                 this.viewLifecycleOwner,
                 Observer {
                     if (it == null) {
-                        Log.d("Vivek","InValid")
-                    } else {
+                                                
+                        Toast.makeText(activity,"Failure",Toast.LENGTH_LONG).show()
 
+                        Log.d("Vivek","InValid")
+                    } else {                        
+                        Toast.makeText(activity,"Success",Toast.LENGTH_LONG).show()
                         Log.d("Vivek","Valid")
 
                     }

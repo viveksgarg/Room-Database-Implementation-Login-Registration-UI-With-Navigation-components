@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".LoginUI.LoginFragment"
+    android:id="@+id/login"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/bg_gradient"
-        tools:context=".LoginUI.LoginFragment"
-        android:id="@+id/login"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp" />
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="70dp" />-->
+
 
         <TextView
             android:id="@+id/tvHello"
@@ -21,7 +27,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="@string/hello"
-            android:textSize="56sp"
+            android:padding="24dp"
+            android:textSize="48sp"
             android:layout_gravity="center" />
 
 
@@ -34,40 +41,47 @@
             android:textSize="22sp"
             android:gravity="center"
             android:textStyle="bold"
-            android:layout_margin="24dp"
-            android:layout_marginTop="30dp" />
+            android:padding="24dp"
+            android:layout_marginBottom="16dp"
+            />
 
         <EditText
             android:id="@+id/etLoginEmail"
             android:layout_width="match_parent"
+            android:layout_height="48dp"
+
             android:hint="@string/e_mail"
             android:textColorHint="@color/grey"
             android:textColor="@color/black"
             android:drawableLeft="@drawable/ic_email"
-            android:layout_height="46dp"
             android:background="@drawable/edittext_registration_screen"
-            android:layout_margin="14dp"
             android:elevation="16dp"
-            android:paddingLeft="16dp"
+            android:padding="12dp"
+            android:layout_margin="12dp"
 
             />
+<!--            android:labelFor="@id/etLoginEmail"-->
+<!--            android:imeActionLabel="@string/e_mail"-->
+
 
         <EditText
             android:id="@+id/etLoginPassword"
             android:layout_width="match_parent"
             android:hint="@string/password"
-            android:layout_height="46dp"
+            android:layout_height="48dp"
+            android:inputType="textPassword"
             android:textColorHint="@color/grey"
             android:textColor="@color/black"
-            android:drawableLeft="@drawable/ic_password"
-            android:drawableRight="@drawable/ic_eye"
+            android:drawableStart="@drawable/ic_password"
+            android:drawableEnd="@drawable/ic_eye"
             android:background="@drawable/edittext_registration_screen"
-            android:layout_margin="14dp"
             android:elevation="16dp"
-            android:paddingLeft="16dp"
-            android:paddingEnd="16dp"
+            android:padding="12dp"
+            android:layout_margin="12dp"/>
+<!--            android:labelFor="@id/etLoginPassword"-->
+<!--            android:imeActionLabel="@string/password"-->
 
-            />
+
 
         <TextView
             android:id="@+id/tvForgotYourPassword"
@@ -75,15 +89,12 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="@string/forgot_your_password"
-            android:layout_margin="24dp"
-            android:layout_gravity="end" />
+            android:padding="24dp"
+            android:layout_gravity="end"/>
+<!--            android:labelFor="@id/tvForgotYourPassword"-->
+<!--            android:imeActionLabel="@string/forgot_your_password"-->
+<!--            tools:ignore="TextViewEdits" />-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="14dp"
-            android:layout_gravity="end">
 
             <TextView
                 android:id="@+id/tvSignin"
@@ -93,19 +104,25 @@
                 android:textColor="@color/white"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:padding="8dp"
-                android:layout_margin="10dp" />
+                android:layout_gravity="right"
+                android:padding="24dp" />
+<!--                android:labelFor="@+id/tvSignin"-->
+<!--                android:imeActionLabel="@string/sign_in"-->
+<!--                tools:ignore="TextViewEdits" -->
 
-            <ImageView
-                android:id="@+id/ivForwardArrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_forward"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/bg_arrow_shape" />
-        </LinearLayout>
+<!--            <ImageButton-->
+<!--                android:id="@+id/ivForwardArrow"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_arrow_forward"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:padding="8dp"-->
+<!--                android:background="@drawable/bg_arrow_shape"-->
+<!--                android:contentDescription="@string/forward_arrow"-->
+<!--                />-->
+
+
 
         <TextView
             android:id="@+id/tvDontHaveAnAccount"
@@ -114,8 +131,24 @@
             android:textColor="@color/white"
             android:text="@string/don_t_have_an_account_create"
             android:layout_gravity="center"
-            android:layout_margin="24dp"
-            android:textSize="20sp" />
+
+            android:padding="24dp"
+            android:textSize="20sp"/>
+<!--            android:labelFor="@+id/tvDontHaveAnAccount"-->
+<!--            android:imeActionLabel="@string/don_t_have_an_account_create"-->
+
+
+    <TextView
+        android:id="@+id/tvSuccessFailure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="22dp"
+        android:textSize="22sp"
+        android:text="@string/hello"
+        android:padding="24dp"
+        android:visibility="visible"
+        />
 
 
     </LinearLayout>
+</ScrollView>

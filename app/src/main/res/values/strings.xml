@@ -14,4 +14,8 @@
     <string name="hello">Hello</string>
     <string name="sign_in_to_your_account">Sign in to your account</string>
     <string name="or_create_account_using_social_media">or create account using social media</string>
+    <string name="failure">Failure</string>
+    <string name="success">Success</string>
+    <string name="forward_arrow">Forward Arrow</string>
+    <string name="go_to_login_screen">Go to Login Screen</string>
 </resources>

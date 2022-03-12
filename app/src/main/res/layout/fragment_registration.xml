@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    tools:context=".RegistartionUI.RegistrationFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:id="@+id/registration"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <LinearLayout
-        tools:context=".RegistartionUI.RegistrationFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_gradient"
-        android:orientation="vertical"
-        android:id="@+id/registration"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
-        <ImageView
+        <ImageButton
             android:id="@+id/ivBackArrowRegistrationScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
             android:src="@drawable/ic_arrow_back"
-            android:layout_margin="16dp" />
+            android:background="@drawable/bg_arrow_shape"
+            android:contentDescription="@string/go_to_login_screen"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
 
         <TextView
             android:id="@+id/tvCreateAccount"
@@ -32,34 +34,31 @@
             android:textSize="28sp"
             android:gravity="center"
             android:textStyle="bold"
-            android:layout_margin="24dp"
-            android:layout_marginTop="30dp" />
+            android:padding="24dp"
+            />
 
         <EditText
             android:id="@+id/etRegisterUserName"
             android:layout_width="match_parent"
             android:hint="@string/username"
             android:textColor="@color/black"
-
             android:textColorHint="@color/grey"
-            android:layout_height="46dp"
-            android:drawableLeft="@drawable/ic_username"
+            android:layout_height="48dp"
+            android:drawableStart="@drawable/ic_username"
             android:background="@drawable/edittext_registration_screen"
             android:layout_margin="14dp"
             android:elevation="16dp"
-            android:paddingLeft="16dp"
-
-            />
+            android:paddingStart="16dp"
+            tools:ignore="RtlSymmetry" />
 
         <EditText
             android:id="@+id/etRegisterEmail"
             android:layout_width="match_parent"
             android:textColorHint="@color/grey"
             android:textColor="@color/black"
-
             android:hint="@string/e_mail"
             android:drawableLeft="@drawable/ic_email"
-            android:layout_height="46dp"
+            android:layout_height="48dp"
             android:background="@drawable/edittext_registration_screen"
             android:layout_margin="14dp"
             android:elevation="16dp"
@@ -71,16 +70,16 @@
             android:id="@+id/etRegisterPassword"
             android:textColorHint="@color/grey"
             android:textColor="@color/black"
-
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:hint="@string/password"
-            android:layout_height="46dp"
-            android:drawableLeft="@drawable/ic_password"
-            android:drawableRight="@drawable/ic_eye"
+            android:layout_height="48dp"
+            android:drawableStart="@drawable/ic_password"
+            android:drawableEnd="@drawable/ic_eye"
             android:background="@drawable/edittext_registration_screen"
             android:layout_margin="14dp"
             android:elevation="16dp"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
             android:paddingEnd="16dp"
 
             />
@@ -90,45 +89,29 @@
             android:layout_width="match_parent"
             android:textColorHint="@color/grey"
             android:textColor="@color/black"
-
             android:hint="@string/phone_number"
-            android:layout_height="46dp"
-            android:drawableLeft="@drawable/ic_phone"
+            android:layout_height="48dp"
+            android:drawableStart="@drawable/ic_phone"
             android:background="@drawable/edittext_registration_screen"
             android:layout_margin="14dp"
             android:elevation="16dp"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
 
-            />
+            tools:ignore="RtlSymmetry" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="14dp"
-            android:layout_gravity="end">
+
 
             <TextView
                 android:id="@+id/tvCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/create"
+                android:layout_gravity="right"
                 android:textColor="@color/white"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:padding="8dp"
-                android:layout_margin="10dp" />
-
-            <ImageView
-                android:id="@+id/ivForwardArrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_forward"
-                android:layout_margin="10dp"
-                android:layout_gravity="center"
-                android:padding="8dp"
-                android:background="@drawable/bg_arrow_shape" />
-        </LinearLayout>
+                android:padding="24dp"
+                android:clickable="true" />
 
         <TextView
             android:id="@+id/tvCreateAccountWithSocials"
@@ -137,17 +120,17 @@
             android:textColor="@color/white"
             android:text="@string/or_create_account_using_social_media"
             android:layout_gravity="center"
-            android:layout_margin="8dp"
+            android:padding="24dp"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="34dp"
-            android:layout_marginRight="34dp">
+            >
 
             <ImageView
+                android:id="@+id/ivGoogle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_google"
@@ -155,6 +138,7 @@
                 android:elevation="5dp" />
 
             <ImageView
+                android:id="@+id/ivTwitter"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_twitter"
@@ -164,15 +148,17 @@
                 />
 
             <ImageView
+                android:id="@+id/ivFacebook"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_facebook"
                 android:layout_weight="1"
                 android:elevation="5dp"
-
                 />
+
         </LinearLayout>
 
 
     </LinearLayout>
 
+</ScrollView>

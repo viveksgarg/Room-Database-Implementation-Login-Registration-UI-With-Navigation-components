@@ -32,8 +32,16 @@ class RegistrationFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = binding.root
 
+//        binding.ivBackArrowRegistrationScreen.setOnClickListener{
+//            Navigation.findNavController(view).navigate(R.id.action_registrationFragment_to_loginFragment)
+//        }
+
         binding.ivBackArrowRegistrationScreen.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_registrationFragment_to_loginFragment)
+            val loginFragment = LoginFragment()
+            val transaction : FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer,loginFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
 
@@ -60,8 +68,13 @@ class RegistrationFragment : Fragment() {
             val user = UserEntity(0,userName,email,password,mobile)
             registrationViewModel.insertUser(user)
 
-            Navigation.findNavController(view).navigate(R.id.action_registrationFragment_to_loginFragment)
+//            Navigation.findNavController(view).navigate(R.id.action_registrationFragment_to_loginFragment)
 
+            val loginFragment = LoginFragment()
+            val transaction : FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer,loginFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
 
     }

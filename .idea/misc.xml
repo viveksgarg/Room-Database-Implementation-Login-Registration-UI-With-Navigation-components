@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/drawable/ic_phone.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/drawable/ic_username.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1403985507246377" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_registration.xml" value="0.19248289156655232" />
       </map>
     </option>

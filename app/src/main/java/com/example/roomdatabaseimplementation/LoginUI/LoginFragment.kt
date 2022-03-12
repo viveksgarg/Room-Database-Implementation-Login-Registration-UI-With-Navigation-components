@@ -1,5 +1,6 @@
 package com.example.roomdatabaseimplementation.LoginUI
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -33,11 +34,17 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = binding.root
 
+//        binding.tvDontHaveAnAccount.setOnClickListener{
+//            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registrationFragment)
+//        }
+
         binding.tvDontHaveAnAccount.setOnClickListener{
-            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_registrationFragment)
+            val registrationFragment = RegistrationFragment()
+            val transaction : FragmentTransaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragmentContainer,registrationFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
-
-
 
 
         val dao = UserDatabase.getDatabase(requireContext()).userDao()
@@ -48,10 +55,11 @@ class LoginFragment : Fragment() {
         )[LoginViewModel::class.java]
         return view
     }
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.ivForwardArrow.setOnClickListener{
+        binding.tvSignin.setOnClickListener{
 
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
@@ -60,10 +68,19 @@ class LoginFragment : Fragment() {
                 this.viewLifecycleOwner,
                 Observer {
                     if (it == null) {
-                        Log.d("Vivek","InValid")
-                    } else {
+                        binding.tvSuccessFailure.text = getString(R.string.failure)
+                        Toast.makeText(activity,"Failed",Toast.LENGTH_LONG).show()
+
+//                        binding.tvSuccessFailure.text = ""
+                    }
+                    else {
+                        binding.tvSuccessFailure.text = getString(R.string.success)
 
                         Log.d("Vivek","Valid")
+                        Toast.makeText(activity,"Success",Toast.LENGTH_LONG).show()
+//
+//                        binding.tvSuccessFailure.text = ""
+
 
                     }
                 }
